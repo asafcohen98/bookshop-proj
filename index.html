@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Books Shop</title>
+</head>
+
+<body onload="onInit()">
+    <header>
+        <h1> Welcome To My Bookshop</h1>
+    </header>
+    <section class="create-new-book">
+        <h3>Create new book</h3>
+        <input type="text" name="newBookTitle" value="Enter Book Title"
+            onfocus="if(this.value === 'Enter Book Title')this.value=''"
+            onblur="if(this.value==='')this.value='Enter Book Title'" />
+        <input type="text" name="newBookPrice" value="Enter Book Price"
+            onfocus="if(this.value === 'Enter Book Price')this.value=''"
+            onblur="if(this.value==='')this.value='Enter Book Price'" />
+            <button onclick="onAddBook()">+Add</button>
+    </section>
+    <section class="book-details">
+        <div class="btn-container"><button onclick="onCloseModal()" class="close-modal-btn">X</button></div>
+        <div class="content-container">
+            <div class="details">
+                <h3 class="book-title">Title:<br> <span></span></h3>
+                <h4 class="book-price">Book Price:<br> $<span></span></h4>
+                <h4 class="book-rate">Rate: <span>0</span></h5>
+                    <section class=rate-section>
+                    </section>
+            </div>
+            <div class="img-container"></div>
+        </div>
+    </section>
+    <section class="books-shop">
+    </section>
+    <footer class="next-back-page">
+        <button onclick="onBackPage()"><p><i class="arrow left"></i></p></button>
+        <button onclick="onNextPage()"><p><i class="arrow right"></i></p></button>
+    </footer>
+
+
+</body>
+<script src="/js/storage-service.js"></script>
+<script src="/js/books-service.js"></script>
+<script src="/js/books-controller.js"></script>
+
+</html>
